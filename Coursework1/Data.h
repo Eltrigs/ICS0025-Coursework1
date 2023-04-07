@@ -7,6 +7,8 @@
 #include "Date.h"
 #include <algorithm>
 #include <ranges>
+#include <iostream>
+#include <stdexcept>
 
 
 class Data
