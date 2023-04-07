@@ -26,6 +26,7 @@ Data::~Data()
 void Data::PrintAll()
 {
 	//Loop through all groups and print them
+	//TestCOmment
 	auto print = [](const Item item) { std::cout << item.getName() + " " + item.getTimestamp().ToString() << std::endl; };
 
 	//Iterate through all groups
