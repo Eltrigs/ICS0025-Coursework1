@@ -37,7 +37,6 @@ Data::Data(int n)
 		//Insert it like any other Item object
 		//std::cout << item.getGroup() << "\t" << item.getSubgroup() << "\t" << item.getName() << "\t" << item.getTimestamp()<< std::endl;
 		this->InsertItem(item.getGroup(), item.getSubgroup(), item.getName(), item.getTimestamp());
-		item.~Item();
 	}
 }
 
@@ -247,7 +246,7 @@ std::optional<Item> Data::InsertItem(char c, int i, std::string s, std::optional
 	}
 
 	//Create the new item with the given function parameters
-	Item newItem = Item(c, i, s, d.value_or(Date::CreateRandomDate(Item::Begin, Item::End)));
+	Item* newItem = new Item(c, i, s, d.value_or(Date::CreateRandomDate(Item::Begin, Item::End)));
 
 	//First check if the group already exists
 	auto groupIterator = DataStructure.find(c);
@@ -255,8 +254,8 @@ std::optional<Item> Data::InsertItem(char c, int i, std::string s, std::optional
 	if (groupIterator == DataStructure.end()) // The group doesn't exist
 	{
 		//Insert a new group using data from the newItem object
-		InsertGroup(newItem.getGroup(), { newItem.getSubgroup() }, { {std::tuple<std::string, std::optional<Date>>(newItem.getName(), newItem.getTimestamp())} });
-		return newItem;
+		InsertGroup(newItem->getGroup(), { newItem->getSubgroup() }, { {std::tuple<std::string, std::optional<Date>>(newItem->getName(), newItem->getTimestamp())} });
+		return *newItem;
 	}
 	else //The group exists
 	{
@@ -267,18 +266,18 @@ std::optional<Item> Data::InsertItem(char c, int i, std::string s, std::optional
 		if (subGroupIterator == currentGroup->end()) //Subgroup doesn't exist
 		{
 			//Create a new subgroup
-			InsertSubgroup(newItem.getGroup(), newItem.getSubgroup(), { std::tuple<std::string, std::optional<Date>>(newItem.getName(), newItem.getTimestamp()) });
-			return newItem;
+			InsertSubgroup(newItem->getGroup(), newItem->getSubgroup(), { std::tuple<std::string, std::optional<Date>>(newItem->getName(), newItem->getTimestamp()) });
+			return *newItem;
 		}
 		else //The subgroup exists
 		{
 			//Check if the exact same Item object exists
 			auto currentSubgroup = subGroupIterator->second;
-			auto itemIterator = subGroupIterator->second->find(newItem);
+			auto itemIterator = subGroupIterator->second->find(*newItem);
 			if (itemIterator == currentSubgroup->end()) // Item does not exist
 			{
-				currentSubgroup->insert(newItem);
-				return newItem;
+				currentSubgroup->insert(*newItem);
+				return *newItem;
 			}
 			else //An exact match was found
 			{
@@ -396,15 +395,72 @@ std::map<int, std::set<Item>*>* Data::InsertGroup(char c, std::initializer_list<
 
 bool Data::RemoveItem(char c, int i, std::string s)
 {
+	auto group = GetGroup(c);
+	auto subgroup = GetSubgroup(c, i);
+	auto item = GetItem(c, i, s);
+
+	if (group != nullptr && subgroup != nullptr && item != std::nullopt) {
+		//auto itemComparison = [&tempItem](const Item &x) { return (x.getName() == tempItem.getName() && x.getSubgroup() == tempItem.getSubgroup() && x.getGroup() == tempItem.getGroup());
+		Item tempItem = Item(c, i, s, Date());
+		for (auto iter = subgroup->begin(); iter != subgroup->end();)
+		{
+			if (iter->getName() == tempItem.getName() && iter->getSubgroup() == tempItem.getSubgroup() && iter->getGroup() == tempItem.getGroup())
+			{
+				subgroup->erase(iter++);
+			}
+			else
+			{
+				++iter;
+			}
+		}
+
+		//If the subgroup is empty after removing the current item, remove the subgroup itself
+		if (subgroup->size() == 0) {
+			return RemoveSubgroup(c, i);
+		}
+
+		return true;
+	}
+
 	return false;
 }
 
 bool Data::RemoveSubgroup(char c, int i)
 {
+	auto group = GetGroup(c);
+	auto subgroup = GetSubgroup(c, i);
+
+	if (group && subgroup) {
+		for (auto& item : *subgroup) {
+			
+		}
+		delete subgroup;
+
+		//Erase the subgroup in the current group
+		group->erase(i);
+
+
+		//If the subgroup is empty after removing the current item, remove the group itself
+		if (group->size() == 0) {
+			return RemoveGroup(c);
+		}
+
+		return true;
+	}
+
 	return false;
 }
 
 bool Data::RemoveGroup(char c)
 {
-	return false;
+	auto group = GetGroup(c);
+	if (group != nullptr) {
+		for (auto innerMapIterator = group->cbegin(); innerMapIterator != group->cend(); ++innerMapIterator) {
+			auto set = innerMapIterator->second;
+			set->clear();
+			delete set;
+		}
+		delete group;
+	}
+	return DataStructure.erase(c);
 }
