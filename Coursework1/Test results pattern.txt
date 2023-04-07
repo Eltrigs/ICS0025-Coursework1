@@ -1,0 +1,193 @@
+A:
+2: Great Crested Grebe 16 Nov 2018
+
+C:
+26: Moorland Francolin 21 Feb 2018
+
+E:
+86: Desert Finch 27 Jul 2018
+
+H:
+34: Ruby-throated Hummingbird 10 Nov 2018
+
+I:
+9: Sooty Tern 16 Sep 2018
+26: Cuckoo 15 Dec 2018
+
+J:
+2: Summer Tanager 19 Jan 2018
+43: Iraq Babbler 16 Jun 2018
+60: Erckel's Francolin 01 Sep 2018
+
+M:
+26: Ural Owl 24 May 2018
+44: Grey Francolin 23 Jul 2018
+
+N:
+85: Blue Rock Thrush 13 Jul 2018
+
+P:
+4: Red-breasted Merganser 03 Apr 2018
+35: Krüper's Nuthatch 23 Mar 2018
+
+Q:
+19: Mute Swan 23 Jun 2018
+
+T:
+93: Nubian Nightjar 18 Jun 2018
+
+V:
+20: White-backed Woodpecker 02 Apr 2018
+
+X:
+6: Ring-necked Duck 23 Mar 2018
+60: Small Button Quail (Andalusian Hemipode) 07 Aug 2018
+
+Y:
+45: Sooty Falcon 04 Aug 2018
+
+
+Inserted
+Inserted
+Inserted
+Inserted
+Inserted
+Not inserted
+Not inserted
+Not inserted
+Not inserted
+
+Item from group Q subgroup 19 Mute Swan 23 Jun 2018
+Item from group E subgroup 86 Kassikakk 29 Oct 2021
+Item from group E subgroup 10 ID XXX does not exist
+Item from group Z subgroup 10 ID XXX does not exist
+
+Items in group E subgroup 86: 4
+Items in group E subgroup 87: 1
+Items in group B subgroup 10: 1
+Items in group X subgroup 10: 0
+Items in group Z subgroup 10: 0
+
+Contents of group E subgroup 86:
+Desert Finch 27 Jul 2018
+Kaljutuvi 06 Sep 2018
+Kassikakk 29 Oct 2021
+Koskel 22 Feb 2018
+Contents of group E subgroup 87:
+Ristpart 04 Nov 2021
+Contents of group B subgroup 10:
+Varblane 13 Aug 2018
+Group X subgroup 10 does not exist
+Group Z subgroup 10 does not exist
+
+Items in group E: 5
+Items in group B: 1
+Items in group X: 2
+
+Group E:
+86: Desert Finch 27 Jul 2018; Kaljutuvi 06 Sep 2018; Kassikakk 29 Oct 2021; Koskel 22 Feb 2018
+87: Ristpart 04 Nov 2021
+Group B:
+10: Varblane 13 Aug 2018
+Group Z does not exist
+
+Inserted
+Inserted
+Not inserted
+Not inserted
+Not inserted
+Not inserted
+Not inserted
+Group E:
+86: Desert Finch 27 Jul 2018; Kaljutuvi 06 Sep 2018; Kassikakk 29 Oct 2021; Koskel 22 Feb 2018
+87: Ristpart 04 Nov 2021
+88: Turteltuvi 17 Sep 2021
+Group W:
+10: Meigas 04 Nov 2021; Rasvatihane 02 Jul 2018
+
+Inserted
+Not inserted
+Not inserted
+Not inserted
+Not inserted
+Not inserted
+Not inserted
+Not inserted
+Group S:
+10: Rohevint 16 Sep 2021; Sootihane 15 Sep 2021
+20: Luik 15 Apr 2018
+30: Lagle 04 Nov 2021; Metsis 04 Nov 2021; Nepp 04 Nov 2021
+
+Removed
+Removed
+Removed
+Not removed
+Group J:
+2: Summer Tanager 19 Jan 2018
+60: Erckel's Francolin 01 Sep 2018
+Group E:
+86: Desert Finch 27 Jul 2018; Kaljutuvi 06 Sep 2018; Koskel 22 Feb 2018
+87: Ristpart 04 Nov 2021
+88: Turteltuvi 17 Sep 2021
+Group Q does not exist
+
+Removed
+Removed
+Not removed
+Not removed
+Not removed
+Group E:
+87: Ristpart 04 Nov 2021
+88: Turteltuvi 17 Sep 2021
+Group Y does not exist
+
+Removed
+Removed
+Not removed
+A:
+2: Great Crested Grebe 16 Nov 2018
+
+B:
+10: Varblane 13 Aug 2018
+
+C:
+26: Moorland Francolin 21 Feb 2018
+
+E:
+87: Ristpart 04 Nov 2021
+88: Turteltuvi 17 Sep 2021
+
+H:
+34: Ruby-throated Hummingbird 10 Nov 2018
+
+I:
+9: Sooty Tern 16 Sep 2018
+26: Cuckoo 15 Dec 2018
+
+J:
+2: Summer Tanager 19 Jan 2018
+60: Erckel's Francolin 01 Sep 2018
+
+M:
+26: Ural Owl 24 May 2018
+44: Grey Francolin 23 Jul 2018
+
+S:
+10: Rohevint 16 Sep 2021; Sootihane 15 Sep 2021
+20: Luik 15 Apr 2018
+30: Lagle 04 Nov 2021; Metsis 04 Nov 2021; Nepp 04 Nov 2021
+
+T:
+93: Nubian Nightjar 18 Jun 2018
+
+V:
+20: White-backed Woodpecker 02 Apr 2018
+
+W:
+10: Meigas 04 Nov 2021; Rasvatihane 02 Jul 2018
+
+X:
+6: Ring-necked Duck 23 Mar 2018
+60: Small Button Quail (Andalusian Hemipode) 07 Aug 2018
+
+The data structure contains 24 items
